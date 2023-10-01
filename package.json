@@ -1,0 +1,39 @@
+{
+  "name": "newstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsnd --respawn --transpile-only --exit-child src/app.ts",
+    "migration:generate": "drizzle-kit generate:pg --schema=./src/db/schema.ts",
+    "migration:push": "node -r esbuild-register src/db/migrate.ts",
+    "migrate": "drizzle-kit generate:pg --schema=./src/db/schema.ts && node -r esbuild-register src/db/migrate.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fastify/multipart": "^8.0.0",
+    "bcrypt": "^5.1.1",
+    "drizzle-orm": "^0.28.6",
+    "fastify": "^4.23.2",
+    "fastify-jwt": "^4.2.0",
+    "fastify-plugin": "^4.5.1",
+    "form-auto-content": "^3.2.0",
+    "i": "^0.3.7",
+    "mime-types": "^2.1.35",
+    "npm": "^10.1.0",
+    "pg": "^8.11.3",
+    "tap": "^18.4.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/fastify-jwt": "^0.8.1",
+    "@types/node": "^20.8.0",
+    "@types/pg": "^8.10.3",
+    "drizzle-kit": "^0.19.13",
+    "ts-node-dev": "^2.0.0"
+  }
+}
